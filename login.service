@@ -1,0 +1,10 @@
+[Unit]
+Description= login Service
+[Service]
+Environment=AUTH_API_PORT=8080
+Environment=USERS_API_ADDRESS=http://192.168.0.40:8080
+ExecStart=/go/src/login/login
+SyslogIdentifier=login
+
+[Install]
+WantedBy=multi-user.target
