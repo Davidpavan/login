@@ -5,6 +5,13 @@ pipeline{
 
   stages{
    stage('Preparing Artifacts'){
+       steps{
+         sh '''
+         go build
+         '''
+       }
+     }
+   stage('Preparing Artifacts'){
      steps{
        sh '''
        zip -r login.zip *
