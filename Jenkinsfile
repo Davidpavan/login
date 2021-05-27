@@ -10,7 +10,7 @@ pipeline{
       }
 
   stages{
-   stage('Preparing Artifacts'){
+   stage('Downloading dependencies'){
        steps{
          sh '''
          go build
