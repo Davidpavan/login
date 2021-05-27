@@ -2,6 +2,12 @@ pipeline{
   agent {
     label 'JAVA'
   }
+  tools {
+          go 'go-1.11'
+      }
+      environment {
+          GO111MODULE = 'on'
+      }
 
   stages{
    stage('Preparing Artifacts'){
