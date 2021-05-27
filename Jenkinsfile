@@ -1,35 +1,9 @@
-pipeline{
-  agent {
-    label 'JAVA'
-  }
-  tools {
-          go 'Go 1.11.4'
-      }
-      environment {
-          GO111MODULE = 'on'
-      }
+@Library('Todo') _
 
-  stages{
-   stage('Downloading dependencies'){
-       steps{
-         sh '''
-         go build
-         '''
-       }
-     }
-   stage('Preparing Artifacts'){
-     steps{
-       sh '''
-       zip -r login.zip *
-       '''
-     }
-   }
-   stage('Upload Artifacts'){
-     steps{
-       sh '''
-       curl -f -v -u admin:admin123 --upload-file login.zip http://192.168.0.84:8081/repository/login/login.zip
-       '''
-     }
-   }
-  }
-}
+Todo(
+  COMPONENT         : 'login',
+  PROJECT_NAME      : "Todo",
+  SLAVE_LABEL       : "JAVA",
+  SKIP_NEXUS_UPLOAD : false,
+  APP_TYPE          : "GO"
+)
