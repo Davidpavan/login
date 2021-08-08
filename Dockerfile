@@ -10,6 +10,6 @@ RUN     go build -o /login
 
 FROM    scratch
 COPY --from=BUILD /go/src/login /go/src/login
-CMD     ["./login"]
+#CMD     ["./login"]
 
 #docker pull    #golang:1.13.15
