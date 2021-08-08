@@ -1,10 +1,7 @@
-FROM    ubuntu
-RUN     apt update -y
-RUN     apt install golang-go -y
-RUN     mkdir -p /go/src/login
-COPY    . /go/src/login
-WORKDIR /go/src/login
-RUN     apt install go-dep
+FROM    golang:1.11.13-alpine
+RUN     mkdir /app
+COPY    . /app/
+WORKDIR /app
 RUN     go get
 RUN     go build -o /login
 CMD     ["./login"]
