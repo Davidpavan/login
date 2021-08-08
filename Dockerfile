@@ -1,8 +1,7 @@
-FROM    golang:1.11.13-alpine
+FROM    instrumentisto/dep
 RUN     mkdir /app
 COPY    . /app/
 WORKDIR /app
-RUN     ["bash", "-c", "apt install dep-ensure"]
 RUN     go get
 RUN     go build -o /login
 CMD     ["./login"]
