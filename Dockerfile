@@ -1,6 +1,6 @@
 FROM    golang:1.16-alpine
 RUN     mkdir /app
-COPY    *.go /app/
+COPY    . /app/
 WORKDIR /app
 RUN     go get
 RUN     go build -o /login
