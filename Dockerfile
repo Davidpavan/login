@@ -1,10 +1,7 @@
-FROM    golang:1.11.13-alpine3.9
-RUN     mkdir -p /go/src/login
-COPY    . /go/src/login
-WORKDIR /go/src/login
-RUN     export PATH=$PATH:/usr/local/go/bin
-RUN     GOPATH=~/go
-RUN     apt install go-dep
-RUN     go get
-RUN     go build
+FROM    golang:1.16-alpine
+RUN     mkdir /app
+COPY    . /app
+WORKDIR /app
+RUN     go mod download
+RUN     go build -o /login
 CMD     ["./login"]
