@@ -1,4 +1,4 @@
-FROM    instrumentisto/dep
+FROM    bitnami/golang
 RUN     mkdir -p /go/src/login
 COPY    . /go/src/login
 WORKDIR /go/src/login
