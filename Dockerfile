@@ -3,7 +3,7 @@ RUN     mkdir -p /go/src/login
 COPY    . /go/src/login
 WORKDIR /go/src/login
 RUN     GOPATH=~/go
-RUN     apt install go-dep
+#RUN     apt install go-dep
 RUN     go get
 RUN     go build
 CMD     ["./login"]
