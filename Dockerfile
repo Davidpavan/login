@@ -1,9 +1,9 @@
 FROM    golang:1.13.15
-RUN     mkdir /app
-COPY    . /app
-WORKDIR /app
+RUN     mkdir -p /go/src/app
+COPY    . /go/src/app
+WORKDIR /go/src/app
 ENV     GO111MODULE=auto
-RUN     GOPATH=/app
+RUN     GOPATH=~/go
 RUN     go get
 RUN     go build
 
