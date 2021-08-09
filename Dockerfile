@@ -3,7 +3,7 @@ RUN     mkdir /app
 COPY    . /app
 WORKDIR /app
 ENV     GO111MODULE=auto
-RUN     GOPATH=~/app
+RUN     GOPATH=/app
 RUN     go get
 RUN     go build
 
