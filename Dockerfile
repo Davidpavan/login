@@ -6,6 +6,7 @@ ENV     GO111MODULE=auto
 RUN     GOPATH=~/go
 RUN     go get
 RUN     go build
+CMD     ["./app"]
 
 #docker pull
 #golang:1.13.15
