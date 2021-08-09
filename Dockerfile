@@ -6,6 +6,7 @@ ENV     GO111MODULE=auto
 RUN     GOPATH=~/go
 RUN     go get
 RUN     go build
+EXPOSE  8080
 CMD     ["./app"]
 
 #docker pull
